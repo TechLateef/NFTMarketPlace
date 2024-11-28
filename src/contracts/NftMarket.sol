@@ -141,7 +141,6 @@ function getAuction(uint256 _tokenId) public view returns (Auction memory) {
 
     //function to auction NFT
     function auctionNFT(uint256 _tokenId, uint256 _startingPrice, uint256 _duration) public {
-    require(_exists(_tokenId), "Token ID does not exist.");
     require(ownerOf(_tokenId) == msg.sender,  'You are not the owner of this NFT.');
     require(!_auctions[_tokenId].active, "Auction already active for this NFT.");
     require(_startingPrice > 0, "Starting price must be greater than zero.");
